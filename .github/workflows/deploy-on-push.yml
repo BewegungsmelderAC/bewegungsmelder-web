@@ -1,0 +1,22 @@
+name: Build Node.js and Publish Docker
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js 13.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '13.x'
+      - run: npm ci
+      - run: npm run build
+      - name: Build and push Docker Image
+        run: |
+          REPO=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
+          docker build . -t docker.pkg.github.com/${REPO}/bewegungsmelder-web
+          echo ${{ secrets.GITHUB_TOKEN }} | docker login -u ${GITHUB_ACTOR} --password-stdin docker.pkg.github.com
+          docker push docker.pkg.github.com/${REPO}/bewegungsmelder-web
