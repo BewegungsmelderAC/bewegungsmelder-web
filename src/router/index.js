@@ -1,6 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import About from '../views/About.vue';
+import Event from '../views/Event.vue';
+import Events from '../views/Events.vue';
+import MainNavbar from "../layout/MainNavbar";
+import MainFooter from "../layout/MainFooter";
 
 Vue.use(VueRouter);
 
@@ -8,7 +13,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    components: { default: Home, header: MainNavbar, footer: MainFooter },
   },
   {
     path: '/about',
@@ -16,17 +21,17 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    components: { default: About, header: MainNavbar, footer: MainFooter },
   },
   {
     path: '/events',
     name: 'events',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Events.vue'),
+    components: { default: Events, header: MainNavbar, footer: MainFooter },
   },
   {
     path: '/event/:event_slug',
     name: 'details',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Event.vue'),
+    components: { default: Event, header: MainNavbar, footer: MainFooter },
   },
 ];
 
