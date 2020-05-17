@@ -4,8 +4,10 @@ import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import Event from '../views/Event.vue';
 import Events from '../views/Events.vue';
-import MainNavbar from "../layout/MainNavbar";
-import MainFooter from "../layout/MainFooter";
+import MainNavbar from '../layout/MainNavbar.vue';
+import MainFooter from '../layout/MainFooter.vue';
+import Groups from '../views/Groups.vue';
+import Group from "../views/Group";
 
 Vue.use(VueRouter);
 
@@ -30,8 +32,18 @@ const routes = [
   },
   {
     path: '/event/:event_slug',
-    name: 'details',
+    name: 'event_details',
     components: { default: Event, header: MainNavbar, footer: MainFooter },
+  },
+  {
+    path: '/groups',
+    name: 'groups',
+    components: { default: Groups, header: MainNavbar, footer: MainFooter },
+  },
+  {
+    path: '/group/:group_slug',
+    name: 'group_details',
+    components: { default: Group, header: MainNavbar, footer: MainFooter },
   },
 ];
 

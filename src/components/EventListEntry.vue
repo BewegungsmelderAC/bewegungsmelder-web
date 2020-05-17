@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     redirectToDetails() {
-      this.$router.push({ name: 'details', params: { event_slug: this.event.slug } });
+      this.$router.push({ name: 'event_details', params: { event_slug: this.event.slug } });
     },
   },
 };

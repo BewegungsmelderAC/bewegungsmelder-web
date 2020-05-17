@@ -57,6 +57,21 @@
                 </a>
               </router-link>
             </li>
+              <li class="md-list-item">
+                <router-link to="/groups">
+                  <a
+                    href="javascript:void(0)"
+                    class="md-list-item-router md-list-item-container md-button-clean"
+                  >
+                    <div class="md-list-item-content">
+                      <md-button slot="title" class="md-button md-button-link md-white md-simple" >
+                        <i class="material-icons">group</i>
+                        <p>Gruppen</p>
+                      </md-button>
+                    </div>
+                  </a>
+                </router-link>
+              </li>
 
               <md-list-item
                 href="https://twitter.com/BewegungAC"
