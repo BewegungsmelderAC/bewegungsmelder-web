@@ -10,7 +10,8 @@
           </div>
         </md-card-header>
         <md-card-content>
-          {{ event.start }} von {{ event.group.name }}
+          {{ event.start }} von
+          <router-link :to="'/group/' + event.group.slug ">{{ event.group.name }}</router-link>
         </md-card-content>
         </div>
     </md-card>

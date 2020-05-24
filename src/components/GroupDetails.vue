@@ -3,7 +3,7 @@
     <h2>{{ group.name }}</h2>
     <div v-html="group.description"></div>
     <h3>Treffen</h3>
-    <div>{{ group.meetup_description }}</div>
+    <div v-html="group.meetup_description"></div>
     <img :src="group.avatar" alt="Cover Image">
   </div>
 </template>

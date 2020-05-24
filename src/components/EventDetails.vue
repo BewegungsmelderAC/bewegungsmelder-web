@@ -1,7 +1,8 @@
 <template>
   <div>
     <h2>{{ getEvent.name }}</h2>
-    <h4>Von {{ getEvent.start }} bis {{ getEvent.end }} von {{ getEvent.group.name}}</h4>
+    <h4>Von {{ getEvent.start }} bis {{ getEvent.end }}</h4>
+    von <router-link :to="'/group/' + getEvent.group.slug ">{{ getEvent.group.name }}</router-link>
     <div v-html="getEvent.content"></div>
   </div>
 </template>

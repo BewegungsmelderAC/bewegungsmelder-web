@@ -4,7 +4,6 @@
     md-elevation="0"
     class="md-transparent md-absolute"
     :class="extraNavClasses"
-    :color-on-scroll="colorOnScroll"
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">

@@ -1,7 +1,6 @@
 <template>
   <footer
     class="footer"
-    :class="{ [`footer-${type}`]: type }"
   >
     <div class="container">
       <nav>
